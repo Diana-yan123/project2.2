@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link href="houndwell park.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    
+
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Map</a></li>
+            <li><a href="Houndwell park.html">Houndwell Park</a></li>
+            <li><a href="coffeelogy.html">Coffeelogy</a></li>
+            <li><a href="bargate.html">Bargate</a></li>
+            <li><a href="church.html">St Michael's Church</a></li>
+            <li><a href="wool.html">The Wool House</a></li>
+            <li><a href="mayflower.html">Mayflower Park</a></li>
+        </ul>
+    </nav>
+
+    <div class="background-collage">
+        <img src="images/wool.jpg" class="collage-image" style="top: 10%; left: 2%; width: 400px; height: 300px;">
+        <img src="images/w.2.jpg" class="collage-image" style="top: 20%; left: 30%; width: 200px; height: 400px;">
+        <img src="images/w.1.jpg" class="collage-image" style="top: 55%; left: 5%; width: 350px; height: 300px;">
+        <img src="images/w.3.jpg" class="collage-image" style="top: 40%; left: 70%; width: 350px; height: 280px;">
+        <img src="images/w.4.jpg" class="collage-image" style="top: 15%; left: 45%; width: 350px; height: 200px;">
+        <img src="images/w.5.jpg" class="collage-image" style="top: 10%; left: 70%; width: 400px; height: 200px;">
+        <img src="images/w.6.jpg" class="collage-image" style="top: 44%; left: 47%; width: 300px; height: 250px;">
+        <img src="images/w.7.jpg" class="collage-image" style="top: 80%; left: 40%; width: 600px; height: 150px;">
+    </div>
+
+    <div class="content">
+        <style>
+        h1{
+            font-family: "winco", sans-serif;
+font-weight: 700;
+font-style: normal;
+        }
+        </style>
+        <h1>The Wool House</h1>
+        
+        <p>The plaque explains the history of the building<br>
+           which is now a bar with seats outside<br>
+           sunny☀️ views of the opposite sea🌊<br>
+           where I can relax😌</p>
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", function(event) {
+    let x = event.clientX;
+    let y = event.clientY;
+
+    // 获取所有背景图像
+    const images = document.querySelectorAll('.collage-image');
+    
+    images.forEach(function(image) {
+        // 获取每张图片的位置
+        const speed = image.getAttribute('data-speed') || 0.1; // 速度可以不同
+        const offsetX = (x * speed) - (window.innerWidth / 2) * speed;
+        const offsetY = (y * speed) - (window.innerHeight / 2) * speed;
+
+        // 设置图片的偏移量（视差效果）
+        image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    });
+});
+
+
+</script>
+</body>
+</html>
